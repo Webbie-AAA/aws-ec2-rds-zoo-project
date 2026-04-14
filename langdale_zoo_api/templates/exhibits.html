@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Exhibits - Langdale Zoo{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>Zoo Exhibits</h1>
+        <p>Explore our diverse collection of exhibits and habitats</p>
+    </div>
+</div>
+
+<section class="exhibits-section">
+    <div class="container">
+        {% if exhibits %}
+            <div class="exhibits-grid">
+                {% for exhibit in exhibits %}
+                <div class="exhibit-card">
+                    <div class="exhibit-info">
+                        <h3>{{ exhibit.name }}</h3>
+                        {% if exhibit.location %}
+                        <p class="location"><strong>Location:</strong> {{ exhibit.location }}</p>
+                        {% endif %}
+                        {% if exhibit.size %}
+                        <p class="size"><strong>Size:</strong> {{ exhibit.size }}</p>
+                        {% endif %}
+                        {% if exhibit.climate %}
+                        <p class="climate"><strong>Climate:</strong> {{ exhibit.climate }}</p>
+                        {% endif %}
+                        {% if exhibit.description %}
+                        <p class="description">{{ exhibit.description }}</p>
+                        {% endif %}
+                        {% if exhibit.opening_hours %}
+                        <p class="hours"><strong>Hours:</strong> {{ exhibit.opening_hours }}</p>
+                        {% endif %}
+                        {% if exhibit.special_features %}
+                        <p class="features"><strong>Special Features:</strong> {{ exhibit.special_features }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="no-data">
+                <p>No exhibits data available at the moment. Please check back later!</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

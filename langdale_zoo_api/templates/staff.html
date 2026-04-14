@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Staff - Langdale Zoo{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>Meet Our Team</h1>
+        <p>Our passionate staff members who make Langdale Zoo special</p>
+    </div>
+</div>
+
+<section class="staff-section">
+    <div class="container">
+        {% if staff %}
+            <div class="staff-grid">
+                {% for member in staff %}
+                <div class="staff-card">
+                    <div class="staff-info">
+                        <h3>{{ member.name }}</h3>
+                        {% if member.position %}
+                        <p class="position">{{ member.position }}</p>
+                        {% endif %}
+                        {% if member.department %}
+                        <p class="department"><strong>Department:</strong> {{ member.department }}</p>
+                        {% endif %}
+                        {% if member.specialization %}
+                        <p class="specialization"><strong>Specialization:</strong> {{ member.specialization }}</p>
+                        {% endif %}
+                        {% if member.experience_years %}
+                        <p class="experience"><strong>Experience:</strong> {{ member.experience_years }} years</p>
+                        {% endif %}
+                        {% if member.education %}
+                        <p class="education"><strong>Education:</strong> {{ member.education }}</p>
+                        {% endif %}
+                        {% if member.bio %}
+                        <p class="bio">{{ member.bio }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="no-data">
+                <p>No staff data available at the moment. Please check back later!</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

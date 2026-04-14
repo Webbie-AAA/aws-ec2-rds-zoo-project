@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Animals - Langdale Zoo{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>Our Amazing Animals</h1>
+        <p>Meet the incredible creatures that call Langdale Zoo home</p>
+    </div>
+</div>
+
+<section class="animals-section">
+    <div class="container">
+        {% if animals %}
+            <div class="animals-grid">
+                {% for animal in animals %}
+                <div class="animal-card">
+                    <div class="animal-info">
+                        <h3>{{ animal.name }}</h3>
+                        <p class="species"><strong>Species:</strong> {{ animal.species }}</p>
+                        {% if animal.age %}
+                        <p class="age"><strong>Age:</strong> {{ animal.age }} years old</p>
+                        {% endif %}
+                        {% if animal.habitat %}
+                        <p class="habitat"><strong>Habitat:</strong> {{ animal.habitat }}</p>
+                        {% endif %}
+                        {% if animal.diet %}
+                        <p class="diet"><strong>Diet:</strong> {{ animal.diet }}</p>
+                        {% endif %}
+                        {% if animal.description %}
+                        <p class="description">{{ animal.description }}</p>
+                        {% endif %}
+                        {% if animal.conservation_status %}
+                        <span class="conservation-status {{ animal.conservation_status.lower().replace(' ', '-') }}">
+                            {{ animal.conservation_status }}
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="no-data">
+                <p>No animals data available at the moment. Please check back later!</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

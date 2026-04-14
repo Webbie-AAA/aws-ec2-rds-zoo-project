@@ -1,0 +1,24 @@
+# Pyramid Array
+
+Write a function that when given a number >= 0, returns an Array of ascending length subarrays.
+
+## Examples
+
+```py
+pyramid(0) = []
+
+pyramid(1) = [[1]]
+
+pyramid(2) = [[1], [1, 1]]
+
+pyramid(3) = [[1], [1, 1], [1, 1, 1]]
+```
+
+Note: the subarrays should be filled with `1`s
+
+
+so its lists inside lists
+So 0 is a list
+its list comprehension
+
+for 

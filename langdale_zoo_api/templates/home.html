@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %}Welcome to Langdale Zoo{% endblock %}
+{% block content %}
+<div class="hero-section">
+  <div class="hero-content">
+    <h1>Welcome to Langdale Zoo</h1>
+    <p>Discover amazing wildlife and create unforgettable memories</p>
+    <a href="/visit" class="cta-button">Plan Your Visit</a>
+  </div>
+</div>
+
+<section class="features">
+  <div class="container">
+    <h2>Explore Our Zoo</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>🐅 Amazing Animals</h3>
+        <p>Meet over 200 species from around the world</p>
+        <a href="/animals">View Animals</a>
+      </div>
+      <div class="feature-card">
+        <h3>🏛️ Interactive Exhibits</h3>
+        <p>Engage with hands-on learning experiences</p>
+        <a href="/exhibits">Explore Exhibits</a>
+      </div>
+      <div class="feature-card">
+        <h3>👥 Expert Staff</h3>
+        <p>Learn from our passionate zookeepers and educators</p>
+        <a href="/staff">Meet Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-section">
+  <div class="container">
+    <h2>Visit Information</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Hours</h3>
+        <p>Daily: 9:00 AM - 6:00 PM</p>
+        <p>Last admission: 5:00 PM</p>
+      </div>
+      <div class="info-card">
+        <h3>Admission</h3>
+        <p>Adults: £15</p>
+        <p>Children (3-12): £8</p>
+        <p>Seniors (65+): £12</p>
+      </div>
+      <div class="info-card">
+        <h3>Location</h3>
+        <p>123 Monkeypatch Lane</p>
+        <p>Langdale, UK</p>
+        <p>(+44) 314 123 4567</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

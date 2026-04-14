@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Langdale Zoo{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">🦁 Langdale Zoo</h1>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/animals">Animals</a></li>
+                    <li><a href="/exhibits">Exhibits</a></li>
+                    <li><a href="/staff">Staff</a></li>
+                    <li><a href="/visit">Plan Your Visit</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Langdale Zoo. All rights reserved.</p>
+            <p>Visit us at 123 Zoo Lane, Langdale | Phone: (555) 123-4567</p>
+        </div>
+    </footer>
+</body>
+</html>
